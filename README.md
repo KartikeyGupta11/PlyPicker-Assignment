@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Project Management Dashboard
+This is a Project Management Dashboard built using Next.js for the frontend and MongoDB for data storage. The web app allows for dynamic project management with role-based access and approval workflows for updates.
 
-## Getting Started
+Features
+Dynamic Web Pages: The app displays a series of project cards, each containing detailed information and images. The project data is fetched dynamically from MongoDB, ensuring that changes are immediately reflected on the frontend.
 
-First, run the development server:
+Admin Dashboard:
 
-```bash
+Admins have full control over all project details, including the ability to update information and images.
+Any changes made by the admin are instantly updated without the need for approval.
+Team Member Dashboard:
+
+Team members can request changes to the project data, but the changes are only applied after approval from the admin.
+The change request system ensures that data consistency is maintained and updates are monitored.
+Approval Workflow:
+
+Team members submit a request to update a project detail.
+The admin can either approve or reject the request.
+Only approved requests are applied to the project, ensuring controlled access to project modifications.
+Tech Stack
+Next.js: For building server-rendered React applications and creating a fast, SEO-optimized frontend.
+MongoDB: Used as the database to store project details and manage update requests.
+Node.js & Express: For creating backend APIs to handle admin and team member actions.
+How to Run Locally
+Clone the repository:
+
+bash
+Copy code
+git clone https://github.com/yourusername/project-management-dashboard.git
+cd project-management-dashboard
+Install dependencies:
+
+bash
+Copy code
+npm install
+Set up environment variables by creating a .env file:
+
+makefile
+Copy code
+MONGODB_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret
+Run the development server:
+
+bash
+Copy code
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Open the browser and navigate to http://localhost:3000.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Future Improvements
+Adding real-time notifications for admins when a team member submits a change request.
+Introducing role-based analytics for tracking updates and changes across projects.
+Improving image upload functionality with cloud storage integration.
